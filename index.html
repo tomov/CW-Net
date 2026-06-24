@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW-Net Project Page</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            background-color: #fafafa;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        h1 {
+            color: #111;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            color: #222;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+        .authors {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .links a {
+            background-color: #24292e;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        .links a:hover {
+            background-color: #0366d6;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+        }
+        .quote {
+            font-style: italic;
+            color: #666;
+            border-left: 4px solid #ccc;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+        }
+        .disclaimer {
+            font-size: 0.9rem;
+            color: #856404;
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        details {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CW-Net</h1>
+        <p style="font-size: 1.2rem; color: #666;">Improving Human Mental Models of Self-Driving Cars through Explainable Deep Learning</p>
+        
+        <div class="authors">
+            <p><strong>Eoin M. Kenny</strong><sup>1</sup>, [Co-Author Name]<sup>2</sup></p>
+            <p style="font-size: 0.9rem;"><sup>1</sup>JPMorgan Chase & Co. / <sup>2</sup>[Institution]</p>
+        </div>
+
+        <div class="links">
+            <a href="https://nature.com/..." target="_blank">📄 Read the Nature Paper</a>
+            <a href="https://github.com/..." target="_blank">💻 Source Code</a>
+            <a href="https://huggingface.co/..." target="_blank">📊 Dataset</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="quote">
+            "The videos of CW-Net and corresponding explanations shown to participants in our studies are available on the project website…"
+        </div>
+
+        <section id="summary">
+            <h2>Intuitive Summary</h2>
+            <p>
+                As self-driving cars become more prevalent, establishing accurate human trust is critical. CW-Net introduces a novel approach to explainable deep learning that transparently communicates the vehicle's decision-making process. By providing clear visual explanations, CW-Net directly improves the fidelity of human mental models, allowing users to accurately predict whether the autonomous system will stop, go, or yield in complex traffic scenarios.
+            </p>
+            
+            <!-- Main Video -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/1OAOBD0A4TU" title="CW-Net Main Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="user-study">
+            <h2>Interactive Demo: User Study Recap</h2>
+            <p>In our key user study, participants were shown driving scenarios and asked to predict the autonomous vehicle's behavior based on CW-Net's explanations. Test your own intuition below.</p>
+            
+            <div class="card">
+                <h3>Scenario A: Complex Intersection</h3>
+                <div class="video-container" style="padding-bottom: 40%;">
+                    <!-- Placeholder for study video -->
+                    <div style="background:#eee; position:absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:#999;">
+                        [Study Video 1 Placeholder]
+                    </div>
+                </div>
+                <p><strong>Study Question:</strong> Based on the highlighted attention map, will the vehicle yield to the pedestrian on the left?</p>
+                <details>
+                    <summary>Reveal Explanation & Participant Results</summary>
+                    <p style="margin-top: 1rem;"><strong>Result:</strong> The vehicle <em>yields</em>. 85% of participants with access to CW-Net explanations successfully predicted this outcome, compared to just 40% in the control group.</p>
+                </details>
+            </div>
+        </section>
+
+        <section id="additional-materials">
+            <h2>Additional Materials</h2>
+            <p>The following section contains supplementary testing data, including closed-course evaluation footage.</p>
+            
+            <details>
+                <summary>View Closed-Course Testing Videos</summary>
+                
+                <div class="disclaimer">
+                    <strong>Caveat:</strong> The videos below feature preliminary testing conducted under strictly controlled, closed-course conditions. They are provided for research reproducibility and do not represent open-road deployment readiness.
+                </div>
+                
+                <ul style="margin-top: 1rem;">
+                    <li><a href="#">Closed-Course Test Run 01 - Obstacle Avoidance</a></li>
+                    <li><a href="#">Closed-Course Test Run 02 - Adverse Weather Simulation</a></li>
+                    <li><a href="#">Closed-Course Test Run 03 - High-Speed Yielding</a></li>
+                </ul>
+            </details>
+        </section>
+    </main>
+
+</body>
+</html>
