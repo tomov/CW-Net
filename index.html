@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CW-Net Project Page</title>
+    <title>Explainable deep learning improves human mental models of self-driving cars</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 2rem 1rem;
             background-color: #fafafa;
@@ -20,8 +20,9 @@
         }
         h1 {
             color: #111;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
         h2 {
             color: #222;
@@ -30,15 +31,35 @@
             margin-top: 2.5rem;
         }
         .authors {
-            font-size: 1.2rem;
-            color: #555;
+            font-size: 1.1rem;
+            color: #444;
             margin-bottom: 1rem;
+        }
+        .affiliations {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        .affiliations p {
+            margin: 0.2rem 0;
+        }
+        .contributions {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 2rem;
+            text-align: left;
+            display: inline-block;
+        }
+        .contributions p {
+            margin: 0.2rem 0;
         }
         .links {
             display: flex;
             justify-content: center;
             gap: 1rem;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
         .links a {
             background-color: #24292e;
@@ -54,7 +75,7 @@
         }
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: 8px;
@@ -107,18 +128,40 @@
 <body>
 
     <header>
-        <h1>CW-Net</h1>
-        <p style="font-size: 1.2rem; color: #666;">Improving Human Mental Models of Self-Driving Cars through Explainable Deep Learning</p>
+        <h1>Explainable deep learning improves human mental models of self-driving cars[cite: 2]</h1>
         
         <div class="authors">
-            <p><strong>Eoin M. Kenny</strong><sup>1</sup>, [Co-Author Name]<sup>2</sup></p>
-            <p style="font-size: 0.9rem;"><sup>1</sup>JPMorgan Chase & Co. / <sup>2</sup>[Institution]</p>
+            <p>
+                <strong>Eoin M. Kenny</strong>*<sup>1</sup>, 
+                <strong>Akshay Dharmavaram</strong><sup>2</sup>, 
+                <strong>Sang Uk Lee</strong><sup>2</sup>, 
+                <strong>Tung Phan-Minh</strong><sup>2</sup>, 
+                <strong>Shreyas Rajesh</strong><sup>2</sup>, 
+                <strong>Yunqing Hu</strong><sup>2</sup>, 
+                <strong>Laura Major</strong><sup>2</sup>, 
+                <strong>Momchil S. Tomov</strong><sup>†‡2,3</sup>, and 
+                <strong>Julie A. Shah</strong><sup>§‡1,4</sup>[cite: 2]
+            </p>
+        </div>
+
+        <div class="affiliations">
+            <p><sup>1</sup> Computer Science & Artificial Intelligence Laboratory (CSAIL), Massachusetts Institute of Technology, Cambridge, MA, USA[cite: 2]</p>
+            <p><sup>2</sup> Motional AD Inc., Boston, MA, USA[cite: 2]</p>
+            <p><sup>3</sup> Department of Psychology and Center for Brain Science, Harvard University, Cambridge, MA, USA[cite: 2]</p>
+            <p><sup>4</sup> Department of Aeronautics and Astronautics, Massachusetts Institute of Technology, Cambridge, MA, USA[cite: 2]</p>
+        </div>
+
+        <div class="contributions">
+            <p>* Corresponding author: ekenny@mit.edu[cite: 2]</p>
+            <p>† momchil.tomov@motional.com[cite: 2]</p>
+            <p>§ julie_a.shah@csail.mit.edu[cite: 2]</p>
+            <p>‡ These authors contributed equally to this work[cite: 2]</p>
         </div>
 
         <div class="links">
-            <a href="https://nature.com/..." target="_blank">📄 Read the Nature Paper</a>
-            <a href="https://github.com/..." target="_blank">💻 Source Code</a>
-            <a href="https://huggingface.co/..." target="_blank">📊 Dataset</a>
+            <a href="#" target="_blank">📄 Read the Nature Paper</a>
+            <a href="https://github.com/EoinKenny/CW-Net-Autonomous-Driving" target="_blank">💻 Source Code</a>
+            <a href="#" target="_blank">📊 Dataset</a>
         </div>
     </header>
 
@@ -130,7 +173,7 @@
         <section id="summary">
             <h2>Intuitive Summary</h2>
             <p>
-                As self-driving cars become more prevalent, establishing accurate human trust is critical. CW-Net introduces a novel approach to explainable deep learning that transparently communicates the vehicle's decision-making process. By providing clear visual explanations, CW-Net directly improves the fidelity of human mental models, allowing users to accurately predict whether the autonomous system will stop, go, or yield in complex traffic scenarios.
+                Self-driving cars increasingly rely on deep neural networks to achieve human-like driving[cite: 2]. The opacity of such black-box planners makes it challenging to accurately anticipate when they will fail, with potentially catastrophic consequences[cite: 2]. Here, we introduce the Concept-Wrapper Network (CW-Net), a method for faithfully explaining the behavior of machine-learning-based planners that causally grounds their reasoning in human-interpretable concepts without sacrificing performance[cite: 2].
             </p>
             
             <!-- Main Video -->
@@ -144,17 +187,17 @@
             <p>In our key user study, participants were shown driving scenarios and asked to predict the autonomous vehicle's behavior based on CW-Net's explanations. Test your own intuition below.</p>
             
             <div class="card">
-                <h3>Scenario A: Complex Intersection</h3>
+                <h3>Scenario: Approaching Stopped Vehicle</h3>
                 <div class="video-container" style="padding-bottom: 40%;">
                     <!-- Placeholder for study video -->
                     <div style="background:#eee; position:absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:#999;">
-                        [Study Video 1 Placeholder]
+                        [Study Video Placeholder]
                     </div>
                 </div>
-                <p><strong>Study Question:</strong> Based on the highlighted attention map, will the vehicle yield to the pedestrian on the left?</p>
+                <p><strong>Study Question:</strong> Based on the highlighted CW-Net concepts, will the vehicle stop or proceed?</p>
                 <details>
                     <summary>Reveal Explanation & Participant Results</summary>
-                    <p style="margin-top: 1rem;"><strong>Result:</strong> The vehicle <em>yields</em>. 85% of participants with access to CW-Net explanations successfully predicted this outcome, compared to just 40% in the control group.</p>
+                    <p style="margin-top: 1rem;"><strong>Result:</strong> By providing causally faithful explanations based on concepts like "Approaching stopped vehicle" or "Close to cyclist," CW-Net allows drivers to better predict vehicle behavior, particularly in surprising situations[cite: 2].</p>
                 </details>
             </div>
         </section>
