@@ -66,6 +66,20 @@
         .logos img:hover {
             opacity: 1;
         }
+        
+        .motional-logo {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            letter-spacing: -1px;
+            opacity: 0.85;
+            transition: opacity 0.3s ease;
+        }
+        
+        .motional-logo:hover {
+            opacity: 1;
+        }
 
         .title {
             font-size: 2.2em;
@@ -89,6 +103,21 @@
         .authors {
             font-size: 1.15em;
             margin-bottom: 10px;
+        }
+        
+        /* Author Link Styling */
+        .authors a {
+            color: var(--text-main);
+            text-decoration: underline;
+            text-decoration-color: #aaa;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            transition: color 0.2s, text-decoration-color 0.2s;
+        }
+        
+        .authors a:hover {
+            color: var(--link-color);
+            text-decoration-color: var(--link-color);
         }
 
         .affiliations {
@@ -215,11 +244,15 @@
 
 <div class="container">
     
+    <!-- Header Section -->
     <header class="header">
         <div class="logos">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg" alt="MIT Logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Harvard_University_logo.svg" alt="Harvard University Logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Motional_logo.svg/512px-Motional_logo.svg.png" alt="Motional Logo" style="height: 25px;">
+            <!-- MIT Logo (Switched to highly reliable PNG) -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/512px-MIT_logo.svg.png" alt="MIT Logo">
+            <!-- Harvard Logo (Switched to highly reliable PNG) -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Harvard_University_logo.svg/512px-Harvard_University_logo.svg.png" alt="Harvard University Logo">
+            <!-- Motional Logo (Bulletproof CSS wordmark fallback) -->
+            <span class="motional-logo">Motional</span>
         </div>
 
         <div class="publication-badge sans-serif">Accepted to Nature, June 2026</div>
@@ -227,8 +260,15 @@
         <h1 class="title">Explainable deep learning improves human mental models of self-driving cars</h1>
         
         <div class="authors">
-            Eoin M. Kenny<sup>1*</sup>, Akshay Dharmavaram<sup>2</sup>, Sang Uk Lee<sup>2</sup>, Tung Phan-Minh<sup>2</sup>, 
-            Shreyas Rajesh<sup>2</sup>, Yunqing Hu<sup>2</sup>, Laura Major<sup>2</sup>, Momchil S. Tomov<sup>2,3</sup>, Julie A. Shah<sup>1,4</sup>
+            <a href="https://eoinkenny.github.io/" target="_blank">Eoin M. Kenny</a><sup>1*</sup>, 
+            Akshay Dharmavaram<sup>2</sup>, 
+            Sang Uk Lee<sup>2</sup>, 
+            Tung Phan-Minh<sup>2</sup>, 
+            Shreyas Rajesh<sup>2</sup>, 
+            Yunqing Hu<sup>2</sup>, 
+            <a href="https://motional.com/laura-major" target="_blank">Laura Major</a><sup>2</sup>, 
+            <a href="https://momchiltomov.com/" target="_blank">Momchil S. Tomov</a><sup>2,3</sup>, 
+            <a href="https://aeroastro.mit.edu/people/julie-shah/" target="_blank">Julie A. Shah</a><sup>1,4</sup>
         </div>
         
         <div class="affiliations">
@@ -239,6 +279,7 @@
         </div>
     </header>
 
+    <!-- Abstract Section -->
     <section class="abstract-section">
         <h2 class="sans-serif">Abstract</h2>
         <div class="abstract-text">
@@ -247,11 +288,13 @@
         </div>
     </section>
 
+    <!-- Closed Court Tests -->
     <section id="closed-court">
         <h2 class="section-title sans-serif">Private Track / Closed Court Tests</h2>
         <p>Initial deployments of CW-Net were conducted on a real AV on a private track. These semi-naturalistic tests allowed us to observe how safety drivers react to naturally occurring surprising events and the corresponding CW-Net explanations.</p>
         
         <div class="video-grid-3">
+            <!-- ASV -->
             <div class="video-wrapper">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/ZE_2rM-X7tw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -259,6 +302,7 @@
                 <div class="video-caption">Approaching Stopped Vehicle (ASV)</div>
             </div>
             
+            <!-- CLOSE -->
             <div class="video-wrapper">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/PksgJu1nqts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -266,6 +310,7 @@
                 <div class="video-caption">Close to Another Vehicle (CLOSE)</div>
             </div>
             
+            <!-- BIKE -->
             <div class="video-wrapper">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/wpI2dAwOFJM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -275,10 +320,12 @@
         </div>
     </section>
 
+    <!-- SAGAT Public Roads Tests -->
     <section id="sagat">
         <h2 class="section-title sans-serif">Public Roads / SAGAT Tests (Surprising Situations)</h2>
         <p>To verify that the effects observed on the private track generalize to more complex, naturalistic scenarios, we deployed CW-Net on public roads. We utilized the Situation Awareness Global Assessment Technique (SAGAT) framework to demonstrate that improvements in mental model goodness lead to improved predictive ability and situational awareness.</p>
 
+        <!-- ASV Concept -->
         <h3 class="concept-title sans-serif">Approaching Stopped Vehicle (ASV)</h3>
         <div class="video-grid-2">
             <div class="video-wrapper">
@@ -295,6 +342,7 @@
             </div>
         </div>
 
+        <!-- CLOSE Concept -->
         <h3 class="concept-title sans-serif">Close to Another Vehicle (CLOSE)</h3>
         <div class="video-grid-2">
             <div class="video-wrapper">
@@ -311,6 +359,7 @@
             </div>
         </div>
 
+        <!-- BIKE Concept -->
         <h3 class="concept-title sans-serif">Cyclist Near (BIKE)</h3>
         <div class="video-grid-2">
             <div class="video-wrapper">
@@ -328,6 +377,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         &copy; 2026 CW-Net Research Team. All rights reserved.
     </footer>
