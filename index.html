@@ -66,20 +66,6 @@
         .logos img:hover {
             opacity: 1;
         }
-        
-        .motional-logo {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: #000;
-            letter-spacing: -1px;
-            opacity: 0.85;
-            transition: opacity 0.3s ease;
-        }
-        
-        .motional-logo:hover {
-            opacity: 1;
-        }
 
         .title {
             font-size: 2.2em;
@@ -244,15 +230,11 @@
 
 <div class="container">
     
-    <!-- Header Section -->
     <header class="header">
         <div class="logos">
-            <!-- MIT Logo (Switched to highly reliable PNG) -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/512px-MIT_logo.svg.png" alt="MIT Logo">
-            <!-- Harvard Logo (Switched to highly reliable PNG) -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Harvard_University_logo.svg/512px-Harvard_University_logo.svg.png" alt="Harvard University Logo">
-            <!-- Motional Logo (Bulletproof CSS wordmark fallback) -->
-            <span class="motional-logo">Motional</span>
+            <img src="imgs/mit.svg" alt="MIT Logo">
+            <img src="imgs/harvard.svg" alt="Harvard University Logo">
+            <img src="imgs/motional.png" alt="Motional Logo">
         </div>
 
         <div class="publication-badge sans-serif">Accepted to Nature, June 2026</div>
@@ -279,7 +261,6 @@
         </div>
     </header>
 
-    <!-- Abstract Section -->
     <section class="abstract-section">
         <h2 class="sans-serif">Abstract</h2>
         <div class="abstract-text">
@@ -288,13 +269,11 @@
         </div>
     </section>
 
-    <!-- Closed Court Tests -->
     <section id="closed-court">
         <h2 class="section-title sans-serif">Private Track / Closed Court Tests</h2>
         <p>Initial deployments of CW-Net were conducted on a real AV on a private track. These semi-naturalistic tests allowed us to observe how safety drivers react to naturally occurring surprising events and the corresponding CW-Net explanations.</p>
         
         <div class="video-grid-3">
-            <!-- ASV -->
             <div class="video-wrapper">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/ZE_2rM-X7tw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -302,7 +281,6 @@
                 <div class="video-caption">Approaching Stopped Vehicle (ASV)</div>
             </div>
             
-            <!-- CLOSE -->
             <div class="video-wrapper">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/PksgJu1nqts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -310,7 +288,6 @@
                 <div class="video-caption">Close to Another Vehicle (CLOSE)</div>
             </div>
             
-            <!-- BIKE -->
             <div class="video-wrapper">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/wpI2dAwOFJM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -320,12 +297,10 @@
         </div>
     </section>
 
-    <!-- SAGAT Public Roads Tests -->
     <section id="sagat">
         <h2 class="section-title sans-serif">Public Roads / SAGAT Tests (Surprising Situations)</h2>
         <p>To verify that the effects observed on the private track generalize to more complex, naturalistic scenarios, we deployed CW-Net on public roads. We utilized the Situation Awareness Global Assessment Technique (SAGAT) framework to demonstrate that improvements in mental model goodness lead to improved predictive ability and situational awareness.</p>
 
-        <!-- ASV Concept -->
         <h3 class="concept-title sans-serif">Approaching Stopped Vehicle (ASV)</h3>
         <div class="video-grid-2">
             <div class="video-wrapper">
@@ -342,7 +317,6 @@
             </div>
         </div>
 
-        <!-- CLOSE Concept -->
         <h3 class="concept-title sans-serif">Close to Another Vehicle (CLOSE)</h3>
         <div class="video-grid-2">
             <div class="video-wrapper">
@@ -359,7 +333,6 @@
             </div>
         </div>
 
-        <!-- BIKE Concept -->
         <h3 class="concept-title sans-serif">Cyclist Near (BIKE)</h3>
         <div class="video-grid-2">
             <div class="video-wrapper">
@@ -377,7 +350,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         &copy; 2026 CW-Net Research Team. All rights reserved.
     </footer>
