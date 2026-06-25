@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW-Net Full Video Library</title>
+    <style>
+        :root {
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-color: #fdfdfd;
+            --link-color: #0056b3;
+            --border-color: #eaeaea;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover { text-decoration: underline; }
+
+        h1 { border-bottom: 2px solid var(--text-main); padding-bottom: 10px; margin-bottom: 40px; }
+        h2 { margin-top: 50px; color: #111; padding-bottom: 5px; border-bottom: 1px solid var(--border-color); }
+        h3 { color: var(--text-light); margin-top: 30px; margin-bottom: 15px; font-size: 1.1em; }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .video-wrapper {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-caption {
+            text-align: center;
+            font-size: 0.9em;
+            color: var(--text-main);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <a href="index.html" class="back-link">&larr; Back to Main Project Page</a>
+
+    <h1>CW-Net Supplementary Video Library</h1>
+    <p>This repository contains the full suite of deployment videos used across our Mental Model elicitation studies and the SAGAT (Situation Awareness Global Assessment Technique) evaluations.</p>
+
+    <h2>1. Mental Model Correlation with Prediction</h2>
+    
+    <h3>Practice Scenario</h3>
+    <div class="video-grid">
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/7_0GeGe_zvo" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">Practice - Before Explanation</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/KNA04gh7Dxs" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">Practice - After Explanation</div></div>
+    </div>
+
+    <h3>Approaching Stopped Vehicle (ASV)</h3>
+    <div class="video-grid">
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/_HwmeBIe3IY" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">ASV - Before Explanation</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/ZE_2rM-X7tw" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">ASV - After Explanation</div></div>
+    </div>
+
+    <h3>Proximity to Other Vehicle (CLOSE)</h3>
+    <div class="video-grid">
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/g9tQtYo3CZY" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">CLOSE - Before Explanation</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/PksgJu1nqts" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">CLOSE - After Explanation</div></div>
+    </div>
+
+    <h3>Cyclist Near (BIKE)</h3>
+    <div class="video-grid">
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/Emv6i0YLbT4" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">BIKE - Before Explanation</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/wpI2dAwOFJM" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">BIKE - After Explanation</div></div>
+    </div>
+
+    <h2>2. SAGAT Study: Control Condition</h2>
+    <p><em>Users were provided kinematics data (speed/steering) but no CW-Net explanations.</em></p>
+
+    <h3>Miscellaneous</h3>
+    <div class="video-grid">
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/PjLF9JdLJNU" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">Control - Practice Scenario</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/DpSyL7FZS2A" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">Control - Attention Check</div></div>
+    </div>
+
+    <h3>Approaching Stopped Vehicle (ASV)</h3>
+    <div class="video-grid">
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/lqCocSAuo_U" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">ASV Surprising 1</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/kANHzqgMSQY" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">ASV Surprising 2</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/Gj9MtF2m_h0" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">ASV Unsurprising 1</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/rDQMBeWfqOs" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">ASV Unsurprising 2</div></div>
+    </div>
+
+    <h3>Close to Another Vehicle (CLOSE)</h3>
+    <div class="video-grid">
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/2j8_dQBmb4Q" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">CLOSE Surprising 1</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/O6yQzMw33Cg" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">CLOSE Surprising 2</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/0yWQRR4ZxRE" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">CLOSE Unsurprising 1</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/5lAUlLK5_tk" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">CLOSE Unsurprising 2</div></div>
+    </div>
+
+    <h3>Cyclist Near (BIKE)</h3>
+    <div class="video-grid">
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/wVI7CT1rJQQ" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">BIKE Surprising 1</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/FjK6S_XKF9g" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">BIKE Surprising 2</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/jKIhbM1zAhA" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">BIKE Unsurprising 1</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/RnBdWk6UBGc" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">BIKE Unsurprising 2</div></div>
+    </div>
+
+    <h2>3. SAGAT Study: Experimental Condition</h2>
+    <p><em>Users were provided with real-time CW-Net concept explanations.</em></p>
+
+    <h3>Miscellaneous</h3>
+    <div class="video-grid">
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/KNA04gh7Dxs" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">Experiment - Practice Scenario</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/tPLpt-wHbxM" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">Experiment - Attention Check</div></div>
+    </div>
+
+    <h3>Approaching Stopped Vehicle (ASV)</h3>
+    <div class="video-grid">
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/1OAOBD0A4TU" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">ASV Surprising 1</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/Zjae97M6bWg" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">ASV Surprising 2</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/2lKNa25R93o" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">ASV Unsurprising 1</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/i6HjBZlh1K0" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">ASV Unsurprising 2</div></div>
+    </div>
+
+    <h3>Close to Another Vehicle (CLOSE)</h3>
+    <div class="video-grid">
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/yBZG_WFa48M" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">CLOSE Surprising 1</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/pjIEr3hYkP4" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">CLOSE Surprising 2</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/OHCVkHjjrbE" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">CLOSE Unsurprising 1</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/zhteAdMafSo" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">CLOSE Unsurprising 2</div></div>
+    </div>
+
+    <h3>Cyclist Near (BIKE)</h3>
+    <div class="video-grid">
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/DQ3I8LRY-fE" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">BIKE Surprising 1</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/6fBDZ3dj4O4" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">BIKE Surprising 2</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/I7tZI4P1zvo" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">BIKE Unsurprising 1</div></div>
+        <div class="video-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/8OoeOlZeVtI" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">BIKE Unsurprising 2</div></div>
+    </div>
+
+</div>
+
+</body>
+</html>

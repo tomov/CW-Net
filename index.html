@@ -11,6 +11,8 @@
             --bg-color: #fdfdfd;
             --link-color: #0056b3;
             --border-color: #eaeaea;
+            --btn-bg: #f4f4f4;
+            --btn-hover: #e0e0e0;
         }
 
         body {
@@ -27,14 +29,8 @@
             font-weight: 400;
         }
 
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
+        a { color: var(--link-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
         .container {
             max-width: 960px;
@@ -42,188 +38,77 @@
             padding: 40px 20px;
         }
 
-        /* Header & Logos */
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .logos {
+        /* Nav Buttons */
+        .nav-buttons {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-
-        .logos img {
-            height: 50px;
-            object-fit: contain;
-            opacity: 0.85;
-            transition: opacity 0.3s ease;
-        }
-
-        .logos img:hover {
-            opacity: 1;
-        }
-
-        .title {
-            font-size: 2.2em;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #111;
-        }
-
-        .publication-badge {
-            display: inline-block;
-            background-color: #111;
-            color: #fff;
-            padding: 5px 12px;
-            font-size: 0.9em;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            font-family: sans-serif;
-            letter-spacing: 0.5px;
-        }
-
-        .authors {
-            font-size: 1.15em;
-            margin-bottom: 10px;
-        }
-        
-        /* Author Link Styling */
-        .authors a {
-            color: var(--text-main);
-            text-decoration: underline;
-            text-decoration-color: #aaa;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 3px;
-            transition: color 0.2s, text-decoration-color 0.2s;
-        }
-        
-        .authors a:hover {
-            color: var(--link-color);
-            text-decoration-color: var(--link-color);
-        }
-
-        .affiliations {
-            font-size: 0.95em;
-            color: var(--text-light);
-            margin-bottom: 30px;
-        }
-
-        .affiliations sup {
-            margin-right: 2px;
-        }
-
-        /* Abstract Section */
-        .abstract-section {
-            background: #fff;
-            padding: 30px 40px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            margin-bottom: 60px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-        }
-
-        .abstract-section h2 {
-            margin-top: 0;
-            text-align: center;
-            font-size: 1.4em;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
-        }
-
-        .abstract-text {
-            text-align: justify;
-            font-size: 1.05em;
-        }
-
-        /* Video Grids */
-        .section-title {
-            font-size: 1.8em;
-            border-bottom: 2px solid var(--text-main);
-            padding-bottom: 10px;
-            margin-top: 60px;
-            margin-bottom: 30px;
-        }
-
-        .video-grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
             margin-bottom: 40px;
         }
-
-        .video-grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .video-wrapper {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            padding: 10px;
-            border-radius: 6px;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.03);
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 4px;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .video-caption {
-            text-align: center;
+        
+        .btn {
             font-family: sans-serif;
-            font-size: 0.9em;
-            color: var(--text-light);
-            margin-top: 10px;
-            font-weight: 500;
+            background-color: var(--btn-bg);
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            font-size: 0.95em;
+            transition: background 0.2s, transform 0.1s;
         }
 
-        .concept-title {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            color: #444;
-            display: flex;
-            align-items: center;
+        .btn:hover {
+            background-color: var(--btn-hover);
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background-color: #111;
+            color: #fff;
+            border-color: #111;
         }
         
-        .concept-title::before {
-            content: "";
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: var(--text-light);
-            border-radius: 50%;
-            margin-right: 10px;
+        .btn-primary:hover {
+            background-color: #333;
+            color: #fff;
         }
 
-        /* Footer */
-        .footer {
-            text-align: center;
-            margin-top: 80px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.9em;
-            color: var(--text-light);
-            font-family: sans-serif;
-        }
+        /* Header & Logos */
+        .header { text-align: center; margin-bottom: 30px; }
+        .logos { display: flex; justify-content: center; align-items: center; gap: 40px; margin-bottom: 30px; }
+        .logos img { height: 50px; object-fit: contain; opacity: 0.85; transition: opacity 0.3s ease; }
+        .logos img:hover { opacity: 1; }
+
+        .title { font-size: 2.2em; font-weight: 600; margin-bottom: 15px; color: #111; }
+        .publication-badge { display: inline-block; background-color: #111; color: #fff; padding: 5px 12px; font-size: 0.9em; border-radius: 4px; margin-bottom: 20px; font-family: sans-serif; letter-spacing: 0.5px; }
+
+        .authors { font-size: 1.15em; margin-bottom: 10px; }
+        .authors a { color: var(--text-main); text-decoration: underline; text-decoration-color: #aaa; text-decoration-thickness: 1px; text-underline-offset: 3px; transition: color 0.2s; }
+        .authors a:hover { color: var(--link-color); text-decoration-color: var(--link-color); }
+        .affiliations { font-size: 0.95em; color: var(--text-light); margin-bottom: 20px; }
+
+        /* Content Sections */
+        .content-section { margin-bottom: 60px; }
+        .section-title { font-size: 1.8em; border-bottom: 2px solid var(--text-main); padding-bottom: 10px; margin-bottom: 25px; }
+        .abstract-text { text-align: justify; font-size: 1.05em; }
+        
+        .figure-img { width: 100%; max-width: 850px; display: block; margin: 30px auto; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
+        .figure-caption { text-align: center; font-family: sans-serif; font-size: 0.9em; color: var(--text-light); margin-top: -15px; margin-bottom: 30px; }
+
+        /* Video Grids */
+        .video-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+        .video-wrapper { background: #fff; border: 1px solid var(--border-color); padding: 10px; border-radius: 6px; box-shadow: 0 1px 5px rgba(0,0,0,0.03); }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .video-caption { text-align: center; font-family: sans-serif; font-size: 0.9em; color: var(--text-light); margin-top: 10px; font-weight: 500; }
+
+        /* Citation Block */
+        .citation-block { background: #f8f9fa; padding: 20px; border-left: 4px solid #111; border-radius: 4px; font-family: monospace; font-size: 0.9em; overflow-x: auto; color: #444; }
+
+        .footer { text-align: center; margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border-color); font-size: 0.9em; color: var(--text-light); font-family: sans-serif; }
     </style>
 </head>
 <body>
@@ -243,110 +128,106 @@
         
         <div class="authors">
             <a href="https://eoinkenny.github.io/" target="_blank">Eoin M. Kenny</a><sup>1*</sup>, 
-            Akshay Dharmavaram<sup>2</sup>, 
-            Sang Uk Lee<sup>2</sup>, 
-            Tung Phan-Minh<sup>2</sup>, 
-            Shreyas Rajesh<sup>2</sup>, 
-            Yunqing Hu<sup>2</sup>, 
+            Akshay Dharmavaram<sup>2</sup>, Sang Uk Lee<sup>2</sup>, Tung Phan-Minh<sup>2</sup>, 
+            Shreyas Rajesh<sup>2</sup>, Yunqing Hu<sup>2</sup>, 
             <a href="https://motional.com/laura-major" target="_blank">Laura Major</a><sup>2</sup>, 
             <a href="https://momchiltomov.com/" target="_blank">Momchil S. Tomov</a><sup>2,3</sup>, 
             <a href="https://aeroastro.mit.edu/people/julie-shah/" target="_blank">Julie A. Shah</a><sup>1,4</sup>
         </div>
         
         <div class="affiliations">
-            <sup>1</sup> Computer Science & Artificial Intelligence Laboratory (CSAIL), Massachusetts Institute of Technology, Cambridge, MA, USA.<br>
-            <sup>2</sup> Motional AD Inc., Boston, MA, USA.<br>
-            <sup>3</sup> Department of Psychology and Center for Brain Science, Harvard University, Cambridge, MA, USA.<br>
-            <sup>4</sup> Department of Aeronautics and Astronautics, Massachusetts Institute of Technology, Cambridge, MA, USA.
+            <sup>1</sup> CSAIL, Massachusetts Institute of Technology | <sup>2</sup> Motional AD Inc. | 
+            <sup>3</sup> Harvard University | <sup>4</sup> Dept. of Aeronautics and Astronautics, MIT
+        </div>
+
+        <div class="nav-buttons">
+            <a href="https://arxiv.org/abs/2411.18714" class="btn btn-primary" target="_blank">Read the Paper</a>
+            <a href="https://github.com/EoinKenny/CW-Net-Autonomous-Driving" class="btn" target="_blank">GitHub Repository</a>
+            <a href="https://github.com/EoinKenny/CW-Net-Autonomous-Driving" class="btn" target="_blank">Dataset</a>
+            <a href="#closed-court" class="btn">Deployment Tests</a>
+            <a href="videos.html" class="btn">SAGAT & Full Video Library</a>
         </div>
     </header>
 
-    <section class="abstract-section">
-        <h2 class="sans-serif">Abstract</h2>
+    <section class="content-section" id="architecture">
+        <h2 class="section-title sans-serif">Interpretable-by-Design Architecture</h2>
         <div class="abstract-text">
-            <p>Self-driving cars increasingly rely on deep neural networks to achieve human-like driving. The opacity of such black-box planners makes it challenging to accurately anticipate when they will fail, with potentially catastrophic consequences. While research into interpreting these systems has surged, most of it is confined to simulations or toy setups due to the difficulty of real-world deployment, leaving the practical utility of such techniques unknown.</p>
-            <p>Here, we introduce the Concept-Wrapper Network (CW-Net), a method for faithfully explaining the behavior of machine-learning-based planners that causally grounds their reasoning in human-interpretable concepts without sacrificing performance. We deploy CW-Net on a real self-driving car and show that the resulting explanations improve the human driver's mental model of the vehicle, allowing them to better predict its behavior, particularly in surprising situations. This demonstrates that explainable deep learning integrated into self-driving cars can be both understandable and useful in a realistic deployment setting.</p>
+            <p>Self-driving cars increasingly rely on deep neural networks to achieve human-like driving. However, the opacity of these black-box planners makes it challenging to anticipate their failures. To address this, we introduce the <strong>Concept-Wrapper Network (CW-Net)</strong>.</p>
+            <p>CW-Net acts as a method for faithfully explaining the behavior of machine-learning-based planners by causally grounding their reasoning in human-interpretable concepts. We replace the final reward layer of a pretrained deep neural network with a concept classifier, generating decisions directly from interpretable scenarios like "Approaching stopped vehicle" or "Close to cyclist."</p>
+        </div>
+        <img src="imgs/architecture.png" alt="CW-Net Architecture" class="figure-img">
+        <div class="figure-caption">CW-Net architecture grounding black-box reasoning in human-friendly concepts.</div>
+    </section>
+
+    <section class="content-section" id="nuplan">
+        <h2 class="section-title sans-serif">Maintaining Expert Performance</h2>
+        <div class="abstract-text">
+            <p>A frequent critique of inherently interpretable models is the perceived trade-off between transparency and task performance. We evaluated CW-Net on the large-scale <em>nuPlan</em> benchmark using closed-loop simulations to verify driving capability.</p>
+            <p>The results demonstrate that CW-Net classifies concepts and provides causally faithful explanations without compromising the driving behavior of the original system. Our model exhibited less than a 1% difference across all safety, progress, and trajectory deviation metrics compared to the opaque baseline agent.</p>
         </div>
     </section>
 
-    <section id="closed-court">
-        <h2 class="section-title sans-serif">Private Track / Closed Court Tests</h2>
-        <p>Initial deployments of CW-Net were conducted on a real AV on a private track. These semi-naturalistic tests allowed us to observe how safety drivers react to naturally occurring surprising events and the corresponding CW-Net explanations.</p>
+    <section class="content-section" id="closed-court">
+        <h2 class="section-title sans-serif">Surprising Situations in Real-World Deployment</h2>
+        <div class="abstract-text">
+            <p>To study the practical utility of CW-Net, we deployed the system on a real self-driving car with a safety driver in a semi-naturalistic study. The following videos capture naturally occurring, surprising events where the explanations actively refined the driver's mental model of the vehicle's decision-making process.</p>
+        </div>
         
         <div class="video-grid-3">
             <div class="video-wrapper">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/ZE_2rM-X7tw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/ZE_2rM-X7tw" allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="video-caption">Approaching Stopped Vehicle (ASV)</div>
+                <div class="video-caption">Approaching Stopped Vehicle (ASV) Hallucination</div>
             </div>
             
             <div class="video-wrapper">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/PksgJu1nqts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/PksgJu1nqts" allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="video-caption">Close to Another Vehicle (CLOSE)</div>
+                <div class="video-caption">Proximity to Other Vehicles (CLOSE)</div>
             </div>
             
             <div class="video-wrapper">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/wpI2dAwOFJM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/wpI2dAwOFJM" allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="video-caption">Cyclist Near (BIKE)</div>
+                <div class="video-caption">Cyclist Detection Limitations (BIKE)</div>
             </div>
         </div>
     </section>
 
-    <section id="sagat">
-        <h2 class="section-title sans-serif">Public Roads / SAGAT Tests (Surprising Situations)</h2>
-        <p>To verify that the effects observed on the private track generalize to more complex, naturalistic scenarios, we deployed CW-Net on public roads. We utilized the Situation Awareness Global Assessment Technique (SAGAT) framework to demonstrate that improvements in mental model goodness lead to improved predictive ability and situational awareness.</p>
-
-        <h3 class="concept-title sans-serif">Approaching Stopped Vehicle (ASV)</h3>
-        <div class="video-grid-2">
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/1OAOBD0A4TU" allowfullscreen></iframe>
-                </div>
-                <div class="video-caption">ASV - Surprising Event 1</div>
-            </div>
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/Zjae97M6bWg" allowfullscreen></iframe>
-                </div>
-                <div class="video-caption">ASV - Surprising Event 2</div>
-            </div>
+    <section class="content-section" id="mental-model">
+        <h2 class="section-title sans-serif">Mental Model & Prediction Correlation</h2>
+        <div class="abstract-text">
+            <p>To validate that the improvements observed in real-world deployment replicate in larger populations, we conducted online studies with both expert test engineers and non-experts. We utilized nearest-neighbor and counterfactual prediction tasks to directly probe user mental models.</p>
+            <p>Our findings indicate that CW-Net explanations consistently shift user beliefs toward the ground-truth reasons for autonomous behavior. Crucially, as the "goodness" of a user's mental model improved, their ability to accurately predict the vehicle's future actions increased significantly.</p>
         </div>
+        <img src="imgs/mental_models.png" alt="Mental Model Correlation" class="figure-img">
+        <div class="figure-caption">Correlation between mental model improvement and prediction accuracy.</div>
+    </section>
 
-        <h3 class="concept-title sans-serif">Close to Another Vehicle (CLOSE)</h3>
-        <div class="video-grid-2">
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/yBZG_WFa48M" allowfullscreen></iframe>
-                </div>
-                <div class="video-caption">CLOSE - Surprising Event 1</div>
-            </div>
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/pjIEr3hYkP4" allowfullscreen></iframe>
-                </div>
-                <div class="video-caption">CLOSE - Surprising Event 2</div>
-            </div>
+    <section class="content-section" id="sagat-summary">
+        <h2 class="section-title sans-serif">SAGAT: Pragmatic Usage and Situational Awareness</h2>
+        <div class="abstract-text">
+            <p>As a final, rigorous evaluation, we collected naturalistic scenarios from public roads in Las Vegas and deployed a large-scale online study using the Situation Awareness Global Assessment Technique (SAGAT).</p>
+            <p>The results provide definitive evidence of pragmatic utility: in surprising, out-of-distribution events, CW-Net explanations yielded large effect-size improvements in perception, comprehension, and projection. Conversely, the explanations did not degrade situational awareness during routine, unsurprising events. These findings establish a deployment-validated pathway for making autonomous agents demonstrably transparent and safe for human operators.</p>
+            <p style="text-align: center; margin-top: 30px;">
+                <a href="videos.html" class="btn btn-primary">View the full SAGAT Video Library</a>
+            </p>
         </div>
+    </section>
 
-        <h3 class="concept-title sans-serif">Cyclist Near (BIKE)</h3>
-        <div class="video-grid-2">
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/DQ3I8LRY-fE" allowfullscreen></iframe>
-                </div>
-                <div class="video-caption">BIKE - Surprising Event 1</div>
-            </div>
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/6fBDZ3dj4O4" allowfullscreen></iframe>
-                </div>
-                <div class="video-caption">BIKE - Surprising Event 2</div>
-            </div>
+    <section class="content-section" id="citation">
+        <h2 class="section-title sans-serif">Citation</h2>
+        <p>If you find this work useful in your research, please consider citing:</p>
+        <div class="citation-block">
+@article{kenny2026explainable,
+  title={Explainable deep learning improves human mental models of self-driving cars},
+  author={Kenny, Eoin M. and Dharmavaram, Akshay and Lee, Sang Uk and Phan-Minh, Tung and Rajesh, Shreyas and Hu, Yunqing and Major, Laura and Tomov, Momchil S. and Shah, Julie A.},
+  journal={Nature},
+  year={2026}
+}
         </div>
     </section>
 
