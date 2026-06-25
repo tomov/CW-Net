@@ -131,6 +131,11 @@
         /* Citation Block */
         .citation-block { background: #f8f9fa; padding: 20px; border-left: 4px solid #111; border-radius: 4px; font-family: monospace; font-size: 0.9em; overflow-x: auto; color: #444; }
 
+        /* SAGAT Concept Blocks */
+        .concept-block { margin-bottom: 50px; padding-bottom: 40px; border-bottom: 1px solid var(--border-color); }
+        .concept-block:last-of-type { border-bottom: none; padding-bottom: 0; }
+        .concept-header { font-size: 1.3em; font-weight: 600; color: #222; margin: 0 0 15px 0; }
+
         .footer { text-align: center; margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border-color); font-size: 0.9em; color: var(--text-light); font-family: sans-serif; }
     </style>
 </head>
@@ -143,6 +148,9 @@
             <img src="imgs/mit.svg" alt="MIT Logo">
             <img src="imgs/harvard.svg" alt="Harvard University Logo">
             <img src="imgs/motional.png" alt="Motional Logo">
+            <img src="https://media.springernature.com/full/nature-cms/uploads/product/nature/header-86f1267ea01f135737bc7e7a2cf40c0f.svg"
+                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20175%2050%22%3E%3Ctext%20x%3D%225%22%20y%3D%2240%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%2238%22%20font-style%3D%22italic%22%20fill%3D%22%23c0183c%22%3Enature%3C%2Ftext%3E%3C%2Fsvg%3E'"
+                 alt="Nature Journal" title="Published in Nature, June 2026">
         </div>
 
         <div class="publication-badge sans-serif">Accepted to Nature, June 2026</div>
@@ -166,7 +174,7 @@
         <div class="nav-buttons">
             <a href="https://arxiv.org/abs/2411.18714" class="btn btn-primary" target="_blank">Read the Paper</a>
             <a href="https://github.com/EoinKenny/CW-Net-Autonomous-Driving" class="btn" target="_blank">GitHub Repository</a>
-            <a href="https://github.com/EoinKenny/CW-Net-Autonomous-Driving" class="btn" target="_blank">Dataset</a>
+            <a href="https://github.com/EoinKenny/CW-Net-Autonomous-Driving/tree/main/data" class="btn" target="_blank">Dataset</a>
             <a href="#deployment" class="btn">Deployment Tests</a>
             <a href="videos.html" class="btn">SAGAT & Full Video Library</a>
         </div>
@@ -250,56 +258,80 @@
         <h2 class="section-title sans-serif">SAGAT: Pragmatic Usage and Situational Awareness</h2>
         <div class="abstract-text">
             <p>As a final, rigorous evaluation, we collected naturalistic scenarios from public roads in Las Vegas and deployed a large-scale online study using the Situation Awareness Global Assessment Technique (SAGAT).</p>
-            <p>The results provide definitive evidence of pragmatic utility: in surprising, out-of-distribution events, CW-Net explanations yielded large effect-size improvements in perception, comprehension, and projection. Conversely, the explanations did not degrade situational awareness during routine, unsurprising events.</p>
-            <p>Below, we map the original private track anomalies (left) to their corresponding complex, naturalistic public road counterparts (right).</p>
+            <p>The results provide definitive evidence of pragmatic utility: in surprising, out-of-distribution events, CW-Net explanations yielded large effect-size improvements in perception, comprehension, and projection. Conversely, the explanations did not degrade situational awareness during routine, unsurprising events. Below, each private-track deployment anomaly (left) is paired with its corresponding Las Vegas SAGAT surprising scenario (right), alongside key concept-activation analyses.</p>
         </div>
-        
-        <div class="video-grid-2-col">
-            <div class="grid-header">Private Track Deployment</div>
-            <div class="grid-header">Public Roads SAGAT (Surprising 1)</div>
-            
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/ZE_2rM-X7tw" allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="video-caption">Private Track: ASV Hallucination</div>
-            </div>
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/1OAOBD0A4TU" allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="video-caption">Public Road: ASV Encounter 1</div>
-            </div>
 
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/PksgJu1nqts" allowfullscreen loading="lazy"></iframe>
+        <!-- ASV Concept Block -->
+        <div class="concept-block">
+            <h3 class="concept-header sans-serif">Approaching Stopped Vehicle (ASV)</h3>
+            <div class="video-grid-2-col">
+                <div class="grid-header">Private Track Deployment</div>
+                <div class="grid-header">Las Vegas SAGAT — Surprising Scenario 1</div>
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/ZE_2rM-X7tw" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="video-caption">ASV Hallucination — Private Track</div>
                 </div>
-                <div class="video-caption">Private Track: CLOSE Proximity</div>
-            </div>
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/yBZG_WFa48M" allowfullscreen loading="lazy"></iframe>
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/1OAOBD0A4TU" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="video-caption">ASV Encounter — Las Vegas Public Road</div>
                 </div>
-                <div class="video-caption">Public Road: CLOSE Encounter 1</div>
             </div>
+            <img src="imgs/asv_deployment.png" alt="ASV Deployment Analysis" class="figure-img">
+            <div class="figure-caption">ASV concept activation and SAGAT deployment analysis.</div>
+        </div>
 
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/wpI2dAwOFJM" allowfullscreen loading="lazy"></iframe>
+        <!-- CLOSE Concept Block -->
+        <div class="concept-block">
+            <h3 class="concept-header sans-serif">Proximity to Other Vehicles (CLOSE)</h3>
+            <div class="video-grid-2-col">
+                <div class="grid-header">Private Track Deployment</div>
+                <div class="grid-header">Las Vegas SAGAT — Surprising Scenario 1</div>
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/PksgJu1nqts" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="video-caption">CLOSE Proximity — Private Track</div>
                 </div>
-                <div class="video-caption">Private Track: BIKE Interaction</div>
-            </div>
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/DQ3I8LRY-fE" allowfullscreen loading="lazy"></iframe>
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/yBZG_WFa48M" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="video-caption">CLOSE Encounter — Las Vegas Public Road</div>
                 </div>
-                <div class="video-caption">Public Road: BIKE Encounter 1</div>
             </div>
+            <img src="imgs/close_deployment.png" alt="CLOSE Deployment Analysis" class="figure-img">
+            <div class="figure-caption">CLOSE concept activation and SAGAT deployment analysis.</div>
+        </div>
+
+        <!-- BIKE Concept Block -->
+        <div class="concept-block">
+            <h3 class="concept-header sans-serif">Cyclist Detection (BIKE)</h3>
+            <div class="video-grid-2-col">
+                <div class="grid-header">Private Track Deployment</div>
+                <div class="grid-header">Las Vegas SAGAT — Surprising Scenario 1</div>
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/wpI2dAwOFJM" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="video-caption">BIKE Detection Failure — Private Track</div>
+                </div>
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/DQ3I8LRY-fE" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="video-caption">BIKE Encounter — Las Vegas Public Road</div>
+                </div>
+            </div>
+            <img src="imgs/bike_deployment.png" alt="BIKE Deployment Analysis" class="figure-img">
+            <div class="figure-caption">BIKE concept activation and SAGAT deployment analysis.</div>
         </div>
 
         <p style="text-align: center; margin-top: 30px;">
-            <a href="videos.html" class="btn btn-primary">View the full SAGAT Video Library</a>
+            <a href="videos.html" class="btn btn-primary">View the Full SAGAT Video Library</a>
         </p>
     </section>
 
