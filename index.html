@@ -99,7 +99,7 @@
         .figure-img { width: 100%; max-width: 850px; display: block; margin: 30px auto 15px auto; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
         .figure-caption { text-align: center; font-family: sans-serif; font-size: 0.9em; color: var(--text-light); margin-bottom: 30px; }
 
-        /* Side-by-Side Layout for Extended Data Figures */
+        /* Side-by-Side Layout */
         .figure-row {
             display: flex;
             gap: 20px;
@@ -107,22 +107,22 @@
             align-items: flex-start;
         }
         
-        .figure-col {
-            flex: 1;
-        }
-        
-        .figure-col .figure-img {
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        /* Responsive stack for mobile */
-        @media (max-width: 768px) {
-            .figure-row { flex-direction: column; }
-        }
+        .figure-col { flex: 1; }
+        .figure-col .figure-img { margin-top: 0; margin-bottom: 10px; }
 
         /* Video Grids */
         .video-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+        
+        /* Strict 2-Column Grid for comparisons */
+        .video-grid-2-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; margin-bottom: 40px; }
+        .grid-header { font-family: sans-serif; font-size: 1.1em; font-weight: 600; text-align: center; margin-bottom: -10px; color: #444; }
+
+        @media (max-width: 768px) {
+            .figure-row { flex-direction: column; }
+            .video-grid-2-col { grid-template-columns: 1fr; }
+            .grid-header { display: none; } /* Hide column headers on mobile stack */
+        }
+
         .video-wrapper { background: #fff; border: 1px solid var(--border-color); padding: 10px; border-radius: 6px; box-shadow: 0 1px 5px rgba(0,0,0,0.03); }
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
@@ -189,6 +189,17 @@
             <p>A frequent critique of inherently interpretable models is the perceived trade-off between transparency and task performance. We evaluated CW-Net on the large-scale <em>nuPlan</em> benchmark using closed-loop simulations to verify driving capability.</p>
             <p>The results demonstrate that CW-Net classifies concepts and provides causally faithful explanations without compromising the driving behavior of the original system. Our model exhibited less than a 1% difference across all safety, progress, and trajectory deviation metrics compared to the opaque baseline agent.</p>
         </div>
+        
+        <div class="figure-row">
+            <div class="figure-col">
+                <img src="imgs/deployment1.png" alt="Deployment Visualization 1" class="figure-img">
+                <div class="figure-caption">Simulated trajectory evaluation.</div>
+            </div>
+            <div class="figure-col">
+                <img src="imgs/deployment2.png" alt="Deployment Visualization 2" class="figure-img">
+                <div class="figure-caption">Real-world concept activation mapping.</div>
+            </div>
+        </div>
     </section>
 
     <section class="content-section" id="deployment">
@@ -231,27 +242,65 @@
             <p>Our findings indicate that CW-Net explanations consistently shift user beliefs toward the ground-truth reasons for autonomous behavior. Crucially, as the "goodness" of a user's mental model improved, their ability to accurately predict the vehicle's future actions increased significantly.</p>
         </div>
         
-        <div class="figure-row">
-            <div class="figure-col">
-                <img src="imgs/Kenny_EDfig3.jpg" alt="Belief Updates" class="figure-img">
-                <div class="figure-caption">Extended Data Fig. 3: Belief updates in response to explanations.</div>
-            </div>
-            <div class="figure-col">
-                <img src="imgs/Kenny_EDfig5.jpg" alt="Prediction Correlation" class="figure-img">
-                <div class="figure-caption">Extended Data Fig. 5: Mental model improvement correlates with prediction accuracy.</div>
-            </div>
-        </div>
+        <img src="imgs/Kenny_EDfig5.jpg" alt="Prediction Correlation" class="figure-img">
+        <div class="figure-caption">Extended Data Fig. 5: Mental model improvement correlates with prediction accuracy.</div>
     </section>
 
     <section class="content-section" id="sagat-summary">
         <h2 class="section-title sans-serif">SAGAT: Pragmatic Usage and Situational Awareness</h2>
         <div class="abstract-text">
             <p>As a final, rigorous evaluation, we collected naturalistic scenarios from public roads in Las Vegas and deployed a large-scale online study using the Situation Awareness Global Assessment Technique (SAGAT).</p>
-            <p>The results provide definitive evidence of pragmatic utility: in surprising, out-of-distribution events, CW-Net explanations yielded large effect-size improvements in perception, comprehension, and projection. Conversely, the explanations did not degrade situational awareness during routine, unsurprising events. These findings establish a deployment-validated pathway for making autonomous agents demonstrably transparent and safe for human operators.</p>
-            <p style="text-align: center; margin-top: 30px;">
-                <a href="videos.html" class="btn btn-primary">View the full SAGAT Video Library</a>
-            </p>
+            <p>The results provide definitive evidence of pragmatic utility: in surprising, out-of-distribution events, CW-Net explanations yielded large effect-size improvements in perception, comprehension, and projection. Conversely, the explanations did not degrade situational awareness during routine, unsurprising events.</p>
+            <p>Below, we map the original private track anomalies (left) to their corresponding complex, naturalistic public road counterparts (right).</p>
         </div>
+        
+        <div class="video-grid-2-col">
+            <div class="grid-header">Private Track Deployment</div>
+            <div class="grid-header">Public Roads SAGAT (Surprising 1)</div>
+            
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ZE_2rM-X7tw" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-caption">Private Track: ASV Hallucination</div>
+            </div>
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/1OAOBD0A4TU" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-caption">Public Road: ASV Encounter 1</div>
+            </div>
+
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/PksgJu1nqts" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-caption">Private Track: CLOSE Proximity</div>
+            </div>
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/yBZG_WFa48M" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-caption">Public Road: CLOSE Encounter 1</div>
+            </div>
+
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/wpI2dAwOFJM" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-caption">Private Track: BIKE Interaction</div>
+            </div>
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/DQ3I8LRY-fE" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-caption">Public Road: BIKE Encounter 1</div>
+            </div>
+        </div>
+
+        <p style="text-align: center; margin-top: 30px;">
+            <a href="videos.html" class="btn btn-primary">View the full SAGAT Video Library</a>
+        </p>
     </section>
 
     <section class="content-section" id="citation">
