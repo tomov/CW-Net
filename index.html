@@ -76,6 +76,18 @@
             color: #fff;
         }
 
+        .btn-disabled {
+            opacity: 0.65;
+            cursor: default;
+        }
+
+        .btn-disabled:hover {
+            background-color: var(--btn-bg);
+            color: #333;
+            transform: none;
+            text-decoration: none;
+        }
+
         /* Header & Logos */
         .header { text-align: center; margin-bottom: 30px; }
         .logos { display: flex; justify-content: center; align-items: center; gap: 40px; margin-bottom: 30px; }
@@ -88,7 +100,8 @@
         .authors { font-size: 1.15em; margin-bottom: 10px; }
         .authors a { color: var(--text-main); text-decoration: underline; text-decoration-color: #aaa; text-decoration-thickness: 1px; text-underline-offset: 3px; transition: color 0.2s; }
         .authors a:hover { color: var(--link-color); text-decoration-color: var(--link-color); }
-        .affiliations { font-size: 0.95em; color: var(--text-light); margin-bottom: 20px; }
+        .affiliations { font-size: 0.95em; color: var(--text-light); margin-bottom: 8px; }
+        .author-notes { font-size: 0.9em; color: var(--text-light); margin-bottom: 20px; font-family: sans-serif; }
 
         /* Content Sections */
         .content-section { margin-bottom: 60px; }
@@ -146,9 +159,7 @@
     <header class="header">
         <div class="logos">
             <img src="imgs/mit.svg" alt="MIT Logo">
-            <img src="imgs/harvard.svg" alt="Harvard University Logo">
             <img src="imgs/motional.png" alt="Motional Logo">
-            <img src="imgs/nature.svg" alt="Nature Journal">
         </div>
 
         <div class="publication-badge sans-serif">Accepted to Nature, June 2026</div>
@@ -160,17 +171,21 @@
             Akshay Dharmavaram<sup>2</sup>, Sang Uk Lee<sup>2</sup>, Tung Phan-Minh<sup>2</sup>, 
             Shreyas Rajesh<sup>2</sup>, Yunqing Hu<sup>2</sup>, 
             <a href="https://motional.com/laura-major" target="_blank">Laura Major</a><sup>2</sup>, 
-            <a href="https://momchiltomov.com/" target="_blank">Momchil S. Tomov</a><sup>2,3</sup>, 
-            <a href="https://aeroastro.mit.edu/people/julie-shah/" target="_blank">Julie A. Shah</a><sup>1,4</sup>
+            <a href="https://momchiltomov.com/" target="_blank">Momchil S. Tomov</a><sup>2,3&dagger;</sup>, 
+            <a href="https://aeroastro.mit.edu/people/julie-shah/" target="_blank">Julie A. Shah</a><sup>1,4&dagger;</sup>
         </div>
         
         <div class="affiliations">
             <sup>1</sup> CSAIL, Massachusetts Institute of Technology | <sup>2</sup> Motional AD Inc. | 
             <sup>3</sup> Harvard University | <sup>4</sup> Dept. of Aeronautics and Astronautics, MIT
         </div>
+        <div class="author-notes">
+            <sup>&dagger;</sup> These authors contributed equally to this work.
+        </div>
 
         <div class="nav-buttons">
-            <a href="https://arxiv.org/abs/2411.18714" class="btn btn-primary" target="_blank">Read the Paper</a>
+            <a href="https://arxiv.org/abs/2411.18714" class="btn btn-primary" target="_blank">arXiv Paper</a>
+            <a href="#" class="btn btn-disabled" aria-disabled="true" title="Nature version coming soon">Nature Paper — Coming Soon</a>
             <a href="https://github.com/EoinKenny/CW-Net-Autonomous-Driving" class="btn" target="_blank">GitHub Repository</a>
             <a href="https://github.com/EoinKenny/CW-Net-Autonomous-Driving/tree/main/data" class="btn" target="_blank">Dataset</a>
             <a href="#deployment" class="btn">Deployment Tests</a>
