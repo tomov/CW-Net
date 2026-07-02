@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explainable deep learning improves human mental models of self-driving cars</title>
-<<<<<<< HEAD
     <style>
         :root {
             --text-main: #333333;
@@ -269,9 +268,6 @@
 
         .footer { text-align: center; margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border-color); font-size: 0.9em; color: var(--text-light); font-family: sans-serif; }
     </style>
-=======
-    <link rel="stylesheet" href="style.css">
->>>>>>> 3d23711893496d095d3fc0b45e9733b1d02a99dd
 </head>
 <body>
 
@@ -313,7 +309,7 @@
             <sup>3</sup> Harvard University | <sup>4</sup> Dept. of Aeronautics and Astronautics, MIT
         </div>
         <div class="author-notes">
-            <sup>&dagger;</sup> MST and JAS contributed equally to this work.
+            <sup>&dagger;</sup> These authors contributed equally to this work.
         </div>
 
         <div class="nav-buttons">
@@ -330,18 +326,18 @@
         <h2 class="section-title sans-serif">Interpretable-by-Design Architecture</h2>
         <div class="abstract-text">
             <p>Self-driving cars increasingly rely on deep neural networks to achieve human-like driving. However, the opacity of these black-box planners makes it challenging to anticipate their failures. To address this, we introduce the <strong>Concept-Wrapper Network (CW-Net)</strong>.</p>
-            <p>CW-Net acts as a method for faithfully explaining the behavior of machine-learning-based planners by causally grounding their reasoning in human-interpretable concepts. We replace the final reward layer of a pretrained deep neural network with a concept classifier, generating decisions directly from interpretable concepts like "Approaching stopped vehicle" or "Close to cyclist."</p>
+            <p>CW-Net acts as a method for faithfully explaining the behavior of machine-learning-based planners by causally grounding their reasoning in human-interpretable concepts. We replace the final reward layer of a pretrained deep neural network with a concept classifier, generating decisions directly from interpretable scenarios like "Approaching stopped vehicle" or "Close to cyclist."</p>
         </div>
         
         <img src="imgs/Figure1.jpg" alt="CW-Net Architecture" class="figure-img">
-        <div class="figure-caption">Figure 1: CW-Net (c) grounds black-box ML planners (a,b) in human-friendly concepts.</div>
+        <div class="figure-caption">Figure 1: CW-Net architecture grounding black-box reasoning in human-friendly concepts.</div>
     </section>
 
     <section class="content-section" id="nuplan">
         <h2 class="section-title sans-serif">Maintaining Expert Performance</h2>
         <div class="abstract-text">
             <p>A frequent critique of inherently interpretable models is the perceived trade-off between transparency and task performance. We evaluated CW-Net on the large-scale <em>nuPlan</em> benchmark using closed-loop simulations to verify driving capability.</p>
-            <p>The results demonstrate that CW-Net classifies concepts and provides causally faithful explanations without compromising the driving performance of the original system. Our model exhibits less than a 1% difference across all safety, progress, and trajectory deviation metrics compared to the opaque baseline agent.</p>
+            <p>The results demonstrate that CW-Net classifies concepts and provides causally faithful explanations without compromising the driving behavior of the original system. Our model exhibited less than a 1% difference across all safety, progress, and trajectory deviation metrics compared to the opaque baseline agent.</p>
         </div>
         
     </section>
@@ -383,7 +379,7 @@
         <h2 class="section-title sans-serif">Mental Model & Prediction Correlation</h2>
         <div class="abstract-text">
             <p>To validate that the improvements observed in real-world deployment replicate in larger populations, we conducted online studies with both expert test engineers and non-experts. We utilized nearest-neighbor and counterfactual prediction tasks to directly probe user mental models.</p>
-            <p>Our findings indicate that CW-Net explanations consistently shift user beliefs toward the ground-truth reasons for autonomous behavior. Crucially, as the "goodness" of a user's mental model improves, their ability to accurately predict the vehicle's future actions also increases significantly.</p>
+            <p>Our findings indicate that CW-Net explanations consistently shift user beliefs toward the ground-truth reasons for autonomous behavior. Crucially, as the "goodness" of a user's mental model improved, their ability to accurately predict the vehicle's future actions increased significantly.</p>
         </div>
         
         <img src="imgs/Kenny_EDfig5.jpg" alt="Prediction Correlation" class="figure-img">
@@ -393,8 +389,8 @@
     <section class="content-section" id="sagat-summary">
         <h2 class="section-title sans-serif">SAGAT: Pragmatic Usage and Situational Awareness</h2>
         <div class="abstract-text">
-            <p>As a final evaluation, we collected naturalistic scenarios from public roads in Las Vegas and conducted a large-scale online study using the Situation Awareness Global Assessment Technique (SAGAT).</p>
-            <p>The results provide additional evidence of the pragmatic utility of CW-Net: in surprising, out-of-distribution events, CW-Net explanations yield improvements in perception, comprehension, and projection. Conversely, CW-Net explanations do not degrade situational awareness during routine, unsurprising events. Below, each private-track deployment anomaly (left) is paired with its corresponding Las Vegas SAGAT surprising scenario (right), alongside key concept-activation analyses.</p>
+            <p>As a final, rigorous evaluation, we collected naturalistic scenarios from public roads in Las Vegas and deployed a large-scale online study using the Situation Awareness Global Assessment Technique (SAGAT).</p>
+            <p>The results provide definitive evidence of pragmatic utility: in surprising, out-of-distribution events, CW-Net explanations yielded large effect-size improvements in perception, comprehension, and projection. Conversely, the explanations did not degrade situational awareness during routine, unsurprising events. Below, each private-track deployment anomaly (left) is paired with its corresponding Las Vegas SAGAT surprising scenario (right), alongside key concept-activation analyses.</p>
         </div>
 
         <div class="concept-block">
@@ -483,7 +479,6 @@
 
     <footer class="footer">
         &copy; 2026 CW-Net Research Team. All rights reserved.
-        <br>Design inspired by Csabi Botos &mdash; <a href="https://botcs.github.io/reason-to-play/">https://botcs.github.io/reason-to-play/</a>
     </footer>
 
 </div>
