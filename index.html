@@ -325,47 +325,69 @@
     <section class="content-section" id="architecture">
         <h2 class="section-title sans-serif">Interpretable-by-Design Architecture</h2>
         <div class="abstract-text">
-            <p>Self-driving cars increasingly rely on deep neural networks to achieve human-like driving. However, the opacity of these black-box planners makes it challenging to anticipate their failures. To address this, we introduce the <strong>Concept-Wrapper Network (CW-Net)</strong>.</p>
-            <p>CW-Net acts as a method for faithfully explaining the behavior of machine-learning-based planners by causally grounding their reasoning in human-interpretable concepts. We replace the final reward layer of a pretrained deep neural network with a concept classifier, generating decisions directly from interpretable scenarios like "Approaching stopped vehicle" or "Close to cyclist."</p>
+            <p>Self-driving technology is already here. Fully autonomous vehicles are navigating public roads in major cities, while increasingly capable driver-assistance systems are becoming part of everyday consumer vehicles. As these technologies advance, people are being asked to place more trust in automated systems that make complex driving decisions in real time.</p>
+            <p>But even the most capable autonomous systems can behave in unexpected ways. This is especially challenging for systems powered by deep learning: while neural networks can learn remarkably sophisticated driving behavior, understanding <em>why</em> they make a particular decision can be difficult. For a safety-critical technology like autonomous driving, that matters: drivers, safety operators, and engineers need to understand the system's limitations and anticipate when it may fail.</p>
+            <p>In our latest research, published in <em>Nature</em>, we introduce the <strong>Concept-Wrapper Network (CW-Net)</strong>, a new approach for making such black-box deep learning systems more interpretable. CW-Net grounds a vehicle's decisions in human-understandable concepts – such as whether it is approaching a stopped vehicle or driving close to another road user – while preserving the driving performance of the original system.</p>
+            <p>We deployed CW-Net on real self-driving cars and found that its explanations helped people build more accurate mental models of the vehicle, allowing them to better predict its behavior when it mattered most.</p>
         </div>
-        
-        <img src="imgs/Figure1.jpg" alt="CW-Net Architecture" class="figure-img">
-        <div class="figure-caption">Figure 1: CW-Net architecture grounding black-box reasoning in human-friendly concepts.</div>
     </section>
 
-    <section class="content-section" id="nuplan">
-        <h2 class="section-title sans-serif">Maintaining Expert Performance</h2>
+    <section class="content-section" id="how-it-works">
+        <h2 class="section-title sans-serif">How CW-Net works</h2>
+
+        <img src="imgs/Figure1.jpg" alt="CW-Net Architecture" class="figure-img">
+        <div class="figure-caption">Figure 1: CW-Net (c) grounds black-box ML planners (a,b) in human-friendly concepts.</div>
+
         <div class="abstract-text">
-            <p>A frequent critique of inherently interpretable models is the perceived trade-off between transparency and task performance. We evaluated CW-Net on the large-scale <em>nuPlan</em> benchmark using closed-loop simulations to verify driving capability.</p>
-            <p>The results demonstrate that CW-Net classifies concepts and provides causally faithful explanations without compromising the driving behavior of the original system. Our model exhibited less than a 1% difference across all safety, progress, and trajectory deviation metrics compared to the opaque baseline agent.</p>
+            <p>Our starting point is a deep-learning-based planner trained to imitate human driving. Given a driving scene, the planner generates a set of possible trajectories and uses a neural network to score each based on how closely it resembles human driving. The vehicle then selects the highest-scoring trajectory.</p>
+            <p>CW-Net makes this process interpretable by introducing a concept layer before the final scoring layer. This layer translates the network's internal representation into human-understandable concepts, such as <em>"Approaching stopped vehicle,"</em> <em>"Close to another vehicle,"</em> or <em>"Close to cyclist."</em> The planner then scores trajectories using only these concepts.</p>
+            <p>This means the concepts do not merely describe decisions after the fact: they directly determine the vehicle's behavior. In that sense, the activated concepts are <em>causally faithful</em> to the vehicle's decision making. CW-Net learns to recognize these concepts while reproducing the decisions of the original planner, with less than 1% difference across metrics on a large-scale autonomous driving benchmark.</p>
         </div>
-        
     </section>
+
 
     <section class="content-section" id="deployment">
-        <h2 class="section-title sans-serif">Surprising Situations in Real-World Deployment</h2>
+        <h2 class="section-title sans-serif">Using CW-Net to understand surprising real-world situations</h2>
         <div class="abstract-text">
-            <p>To study the practical utility of CW-Net, we deployed the system on a real self-driving car with a safety driver in a semi-naturalistic study. The following setup and videos capture naturally occurring, surprising events where the explanations actively refined the driver's mental model of the vehicle's decision-making process.</p>
+            <p>To test whether CW-Net's explanations are useful in practice, we deployed it on a real self-driving vehicle in a semi-naturalistic study. Rather than scripting specific failures, we observed surprising situations that arose naturally during testing and examined whether CW-Net could help the safety driver understand what the vehicle was doing and predict how it would behave next.</p>
+
+            <img src="imgs/Figure2.jpg" alt="Deployment Setup" class="figure-img">
+            <div class="figure-caption">Figure 2: Real-world deployment setup and CW-Net graphical user interface.</div>
+
+            <p>Three situations stood out. In each, the driver's initial understanding turned out to be incomplete or incorrect. CW-Net's explanations revealed what was actually influencing the vehicle's behavior, allowing the driver to form a better mental model of the system.</p>
         </div>
 
-        <img src="imgs/Figure2.jpg" alt="Deployment Setup" class="figure-img">
-        <div class="figure-caption">Figure 2: Real-world deployment setup and CW-Net graphical user interface.</div>
-        
-        <div class="video-grid-3">
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/ZE_2rM-X7tw" allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="video-caption">Approaching Stopped Vehicle (ASV) Hallucination</div>
+        <div class="concept-block">
+            <h3 class="concept-header sans-serif">Getting stuck next to parked vehicles</h3>
+            <div class="abstract-text">
+                <p>The vehicle repeatedly stopped near a pickup/drop-off zone. The driver initially believed the zone itself was causing the behavior, but CW-Net showed strong activation for the <em>"Close to another vehicle"</em> concept. After seeing the explanation, the driver tested this hypothesis by manually moving the vehicle farther away from the parked cars – and the vehicle began moving again.</p>
             </div>
-            
             <div class="video-wrapper">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/PksgJu1nqts" allowfullscreen loading="lazy"></iframe>
                 </div>
                 <div class="video-caption">Proximity to Other Vehicles (CLOSE)</div>
             </div>
-            
+        </div>
+
+        <div class="concept-block">
+            <h3 class="concept-header sans-serif">Hallucinating a stopped vehicle</h3>
+            <div class="abstract-text">
+                <p>In another location, the vehicle repeatedly stopped next to a traffic cone. The driver initially blamed the cone, but CW-Net activated the <em>"Approaching stopped vehicle"</em> concept, suggesting that the planner was behaving as though a stopped vehicle were ahead. Removing the cone did not change the behavior: the vehicle stopped in the same place, supporting the explanation that it was hallucinating a stopped vehicle at that location.</p>
+            </div>
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ZE_2rM-X7tw" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-caption">Approaching Stopped Vehicle (ASV) Hallucination</div>
+            </div>
+        </div>
+
+        <div class="concept-block">
+            <h3 class="concept-header sans-serif">Reacting safely to a cyclist</h3>
+            <div class="abstract-text">
+                <p>Finally, the vehicle reliably stopped when approaching a cyclist, but CW-Net's <em>"Close to cyclist"</em> concept remained near zero. This revealed that, despite the apparently safe behavior, the planner itself was not responding to the cyclist. After seeing the explanation, the driver became more cautious; subsequent analysis confirmed that a separate safety system, rather than the planner, had been preventing the collision.</p>
+            </div>
             <div class="video-wrapper">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/wpI2dAwOFJM" allowfullscreen loading="lazy"></iframe>
@@ -373,24 +395,40 @@
                 <div class="video-caption">Cyclist Detection Limitations (BIKE)</div>
             </div>
         </div>
+
+        <div class="abstract-text">
+            <p>Figure 3 summarizes these three real-world scenarios and the evidence that the CW-Net explanations reflected meaningful aspects of the planner's behavior. Across repeated tests, the relevant concepts were associated with changes in the vehicle's behavior. Analogous situations also emerged during operation on public roads.</p>
+        </div>
+        <img src="imgs/Figure3.png" alt="Real-world scenario evidence" class="figure-img">
+        <div class="figure-caption">Figure 3: Summary of three real-world scenarios and evidence that CW-Net explanations reflected meaningful aspects of the planner's behavior.</div>
     </section>
 
     <section class="content-section" id="mental-model">
-        <h2 class="section-title sans-serif">Mental Model & Prediction Correlation</h2>
+        <h2 class="section-title sans-serif">Evaluating CW-Net explanations at scale</h2>
         <div class="abstract-text">
-            <p>To validate that the improvements observed in real-world deployment replicate in larger populations, we conducted online studies with both expert test engineers and non-experts. We utilized nearest-neighbor and counterfactual prediction tasks to directly probe user mental models.</p>
-            <p>Our findings indicate that CW-Net explanations consistently shift user beliefs toward the ground-truth reasons for autonomous behavior. Crucially, as the "goodness" of a user's mental model improved, their ability to accurately predict the vehicle's future actions increased significantly.</p>
+            <p>To test whether these findings generalize beyond individual safety drivers, we conducted larger online studies using video replays of the same real-world scenarios. We tested both self-driving experts and non-experts, asking whether CW-Net's explanations could improve their understanding of the vehicle and their ability to predict what it would do next.</p>
+            <p>Participants first watched each scenario without CW-Net's explanation and answered questions about <em>why</em> the vehicle behaved as it did and <em>what it would do</em> in a counterfactual situation. They then saw the explanation and answered the same questions again.</p>
         </div>
-        
-        <img src="imgs/Kenny_EDfig5.jpg" alt="Prediction Correlation" class="figure-img">
-        <div class="figure-caption">Extended Data Fig. 5: Mental model improvement correlates with prediction accuracy.</div>
+
+        <img src="imgs/Kenny_EDfig3.jpg" alt="Explanations improve mental models and predictions" class="figure-img" style="width: 60%; max-width: 510px;">
+        <div class="figure-caption">Extended Fig. 3: Explanations improve mental models and predictions across expert and non-expert populations.</div>
+
+        <div class="abstract-text">
+            <p>CW-Net's explanations shifted participants toward more accurate mental models of the vehicle and improved their predictions of its future behavior. These improvements were seen in both self-driving experts and non-experts, suggesting that the explanations are useful regardless of prior expertise.</p>
+        </div>
     </section>
 
     <section class="content-section" id="sagat-summary">
-        <h2 class="section-title sans-serif">SAGAT: Pragmatic Usage and Situational Awareness</h2>
+        <h2 class="section-title sans-serif">Improving situational awareness on public roads</h2>
         <div class="abstract-text">
-            <p>As a final, rigorous evaluation, we collected naturalistic scenarios from public roads in Las Vegas and deployed a large-scale online study using the Situation Awareness Global Assessment Technique (SAGAT).</p>
-            <p>The results provide definitive evidence of pragmatic utility: in surprising, out-of-distribution events, CW-Net explanations yielded large effect-size improvements in perception, comprehension, and projection. Conversely, the explanations did not degrade situational awareness during routine, unsurprising events. Below, each private-track deployment anomaly (left) is paired with its corresponding Las Vegas SAGAT surprising scenario (right), alongside key concept-activation analyses.</p>
+            <p>Finally, we tested whether these benefits extend to more complex, naturalistic driving. We ran CW-Net during several hours of public-road operation in Las Vegas and used the resulting scenarios in a larger online study of situational awareness.</p>
+            <p>We used the <em>Situation Awareness Global Assessment Technique (SAGAT)</em>, a standard framework that measures whether people can <em>perceive</em> what is happening, <em>comprehend</em> why it is happening, and <em>predict</em> what will happen next. Participants watched videos either with CW-Net explanations or with basic vehicle information. At a key moment, the video was paused and participants were asked questions about the situation.</p>
+
+            <img src="imgs/Kenny_EDfig7.jpg" alt="SAGAT results" class="figure-img">
+            <div class="figure-caption">Extended Fig. 7: Explanations improve situational awareness for surprising events without affecting it for unsurprising events.</div>
+
+            <p>CW-Net significantly improved all three measures of situational awareness during <em>surprising events</em>, when understanding the vehicle was most important. For unsurprising events, the explanations produced no significant differences. Together with our earlier studies, these results show that CW-Net can help people build better mental models of a self-driving system and use those models to better understand and anticipate its behavior.</p>
+
         </div>
 
         <div class="concept-block">
