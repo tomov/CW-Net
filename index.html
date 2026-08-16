@@ -239,6 +239,16 @@
         </p>
     </section>
 
+    <section class="content-section" id="limitations">
+        <h2 class="section-title sans-serif">Limitations and next steps</h2>
+        <div class="abstract-text">
+            <p>Our study is a proof of concept, and several challenges remain before an approach like CW-Net could be used in production. We evaluated it on a relatively small set of real-world scenarios, partly because surprising events are, by definition, difficult to find in a capable self-driving system. Our experimental planner also has limitations, which gave us opportunities to study unexpected behavior in the real world. Future work will need to evaluate CW-Net across many more situations and with more capable, potentially production-grade planners.</p>
+            <p>Our experiments also focused on a single type of machine-learning-based planner. However, the core idea behind CW-Net is not specific to this architecture: grounding a model's internal representations in human-interpretable concepts could similarly be applied to other approaches, including end-to-end learning systems and emerging vision-language-action models. An important next step is to test how well CW-Net generalizes across these architectures and to a much broader set of driving concepts.</p>
+            <p>There is also more work to do in how explanations are presented. CW-Net produces concept probabilities that must be normalized and thresholded before they become useful explanations, and drivers needed time to learn how to interpret them. A production system would require careful interface design to present the right concepts, at the right time, in a form that is intuitive without becoming distracting.</p>
+            <p>More broadly, improving the underlying planner creates an interesting challenge for evaluating explainability: as driving systems become better, surprising failures become rarer; yet understanding the remaining failures may become even more important. Testing CW-Net at greater scale will therefore require stronger planners, broader architectures, and new ways of finding informative real-world situations in which explanations can help people understand the capabilities and limitations of increasingly sophisticated autonomous systems.</p>
+        </div>
+    </section>
+
     <section class="content-section" id="citation">
         <h2 class="section-title sans-serif">Citation</h2>
         <p>If you find this work useful in your research, please consider citing:</p>
